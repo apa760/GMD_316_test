@@ -1,0 +1,47 @@
+# =========================================================================
+# Unity Generated Folders & Files
+# =========================================================================
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+.utmp/
+
+# =========================================================================
+# Build Outputs
+# =========================================================================
+# Ignores default build locations at the project root
+/[Bb]uild/
+/[Bb]uilds/
+
+# =========================================================================
+# IDE & System Files
+# =========================================================================
+# Visual Studio / Rider / VS Code compilation files
+✳️.csproj
+✳️.unityproj
+✳️.sln
+✳️.suo
+✳️.tmp
+✳️.user
+✳️.userprefs
+✳️.pidb
+✳️.booproj
+✳️.svclog
+✳️.pdb
+✳️.opendb
+✳️.IDB
+.vs/
+.idea/
+.gradle/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# =========================================================================
+# Crash & Log files
+# =========================================================================
+sysinfo.txt
+*.log
