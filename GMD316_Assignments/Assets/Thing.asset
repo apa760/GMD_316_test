@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b15493b70e6fba443942ea299e6b7375, type: 3}
-  m_Name: Gold
+  m_Name: Thing
   m_EditorClassIdentifier: Assembly-CSharp::SOItem
-  itemName: Gold
-  itemDescription: One small gold coin. Can I spend it?
+  itemName: Thing
+  itemDescription: A thing to collect.
   itemValue: 1
   icon: {fileID: 0}
