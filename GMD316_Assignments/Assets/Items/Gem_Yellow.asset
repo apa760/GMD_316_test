@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b15493b70e6fba443942ea299e6b7375, type: 3}
-  m_Name: Thing
+  m_Name: Gem_Yellow
   m_EditorClassIdentifier: Assembly-CSharp::SOItem
-  itemName: Thing
-  itemDescription: A thing to collect.
+  itemName: Yellow Gem
+  itemDescription: Should hold on to this. Not sure what it goes to though.
   itemValue: 1
-  icon: {fileID: 0}
+  icon: {fileID: 3625043607559282579, guid: 80896e82349a8ea46bbe9c8f7775cbba, type: 3}
+  color: {r: 0.98564017, g: 1, b: 0.3529412, a: 1}

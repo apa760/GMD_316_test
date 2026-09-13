@@ -3,8 +3,11 @@ using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public PlayerSaveData saveData;
+
     [SerializeField]
-    Dictionary<SOItem, int> inventoryDict = new Dictionary<SOItem, int>();
+    public Dictionary<SOItem, int> inventoryDict = new Dictionary<SOItem, int>();
+    List<string> itemNames = new List<string>();
 
 
     void Update()
@@ -24,10 +27,17 @@ public class PlayerInventory : MonoBehaviour
             Debug.Log("Tried to remove 1 trash from inventory");
             RemoveItemFromInventory("Trash", 1);
         }
-        if(Input.GetKeyDown(KeyCode.B)) // remove 1 seed from inventory
+        if(Input.GetKeyDown(KeyCode.L))
         {
-            Debug.Log("Tried to remove 1 seed from inventory");
-            RemoveItemFromInventory("Seed", 1);
+            var token = new PlayerSaveData.AccessToken("player1", PlayerSaveData.UserRole.Player);
+            bool success = saveData.SetInventory(itemNames, token);
+
+        }
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            var token = new PlayerSaveData.AccessToken("player1", PlayerSaveData.UserRole.Player);
+            Debug.Log(saveData.GetInventory());
+
         }
     }
 
@@ -42,6 +52,7 @@ public class PlayerInventory : MonoBehaviour
         else // if not, add a new key to the dictionary
         {
             inventoryDict.Add(itemToAdd, itemToAdd.itemValue);
+            itemNames.Add(itemToAdd.itemName);
         }
         
     }
@@ -63,7 +74,7 @@ public class PlayerInventory : MonoBehaviour
                     // remove the item from the inventory if 0 or less
                     inventoryDict.Remove(item.Key);
                 }
-
+                itemNames.Remove(itemToRemoveName);
                 Debug.Log("Removed " + itemToRemoveName + " from player inventory!");
                 return;
             }

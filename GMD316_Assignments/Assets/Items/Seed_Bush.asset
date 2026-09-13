@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b15493b70e6fba443942ea299e6b7375, type: 3}
-  m_Name: Trash
+  m_Name: Seed_Bush
   m_EditorClassIdentifier: Assembly-CSharp::SOItem
-  itemName: Trash
-  itemDescription: A piece of trash to pick up.
+  itemName: Bush Seed
+  itemDescription: A small seed that can be planted.
   itemValue: 1
-  icon: {fileID: 0}
+  icon: {fileID: -2413806693520163455, guid: 5ce90fece511632498a1432a1cf6ef97, type: 3}
+  color: {r: 0.4185208, g: 0.8962264, b: 0.5199805, a: 1}

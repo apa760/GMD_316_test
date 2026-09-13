@@ -9,7 +9,7 @@ public class SOItem : ScriptableObject
     public string itemDescription;
     public int itemValue;
     public Sprite icon;
-
+    public Color color;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
