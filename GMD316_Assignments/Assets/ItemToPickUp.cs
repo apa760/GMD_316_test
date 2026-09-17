@@ -16,7 +16,7 @@ public class ItemToPickUp : MonoBehaviour
         if(col.gameObject.tag == "Player")
         {
             GameObject playerObject = col.gameObject;
-            playerObject.GetComponent<PlayerInventory>().AddItemToInventory(itemSO);
+            playerObject.GetComponent<InventoryVersionList>().AddItemToInventory(itemSO);
             Destroy(gameObject);
 
         }

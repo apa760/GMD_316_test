@@ -1795,6 +1795,7 @@ GameObject:
   - component: {fileID: 800874268}
   - component: {fileID: 800874270}
   - component: {fileID: 800874269}
+  - component: {fileID: 800874271}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1903,7 +1904,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800874263}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cba3a159f36e42c4a8db6d18bedf24aa, type: 3}
   m_Name: 
@@ -1935,6 +1936,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeedMultiplier: 0
+--- !u!114 &800874271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800874263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2519da307ea11840aa0934e260d9fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerInventory: []
 --- !u!1 &915946990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,20 +2214,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c5e5c0046fdc14b9beabeebee90f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  ItemsAll:
-  - {fileID: 11400000, guid: 2b380aa40957f324f87fa6e6e41c98fc, type: 2}
-  - {fileID: 11400000, guid: 6a12c2c453a1d7b4aa97ac915a997c47, type: 2}
-  - {fileID: 11400000, guid: 7566c1e4d9159b741b7c7c45c9436ffe, type: 2}
-  - {fileID: 11400000, guid: 16c90283293a04344b556ef89c148d68, type: 2}
-  - {fileID: 11400000, guid: 777a715a4aadff64691e9e97a2cdf1ed, type: 2}
-  - {fileID: 11400000, guid: f4be6d428d46f1f458dec9b649b247e5, type: 2}
-  - {fileID: 11400000, guid: 924813e81bf63a940b77d46776e1afa0, type: 2}
-  - {fileID: 11400000, guid: 5e4875deee8498844a3d66cc14a6ad6e, type: 2}
-  - {fileID: 11400000, guid: 09a6ffe785ce2cc4a83354eb2db72f87, type: 2}
-  - {fileID: 11400000, guid: e3c03e2d57b9ea141aac0cd7fa1665a2, type: 2}
-  - {fileID: 11400000, guid: c21697279676bb04085a65ef780f0c6f, type: 2}
-  - {fileID: 11400000, guid: 63b422def5617094f97fabb2fb061fb7, type: 2}
+  spawnedItems: []
   itemObject: {fileID: 3113253035880447860, guid: 6f3bb12757b2b344a80b0fd32404cd38, type: 3}
+  allItemsFilePath: 
+  newItemSO: {fileID: 0}
 --- !u!4 &1597144729
 Transform:
   m_ObjectHideFlags: 0

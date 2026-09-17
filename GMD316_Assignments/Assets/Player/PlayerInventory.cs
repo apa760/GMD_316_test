@@ -10,36 +10,36 @@ public class PlayerInventory : MonoBehaviour
     List<string> itemNames = new List<string>();
 
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            PrintPlayerInventory();
-        }
+    // void Update()
+    // {
+    //     if(Input.GetKeyDown(KeyCode.I))
+    //     {
+    //         PrintPlayerInventory();
+    //     }
 
-        if(Input.GetKeyDown(KeyCode.G)) // remove 1 gold from inventory
-        {
-            Debug.Log("Tried to remove 1 gold from inventory");
-            RemoveItemFromInventory("Gold", 1);
-        }
-        if(Input.GetKeyDown(KeyCode.T)) // remove 1 trash from inventory
-        {
-            Debug.Log("Tried to remove 1 trash from inventory");
-            RemoveItemFromInventory("Trash", 1);
-        }
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            var token = new PlayerSaveData.AccessToken("player1", PlayerSaveData.UserRole.Player);
-            bool success = saveData.SetInventory(itemNames, token);
+    //     if(Input.GetKeyDown(KeyCode.G)) // remove 1 gold from inventory
+    //     {
+    //         Debug.Log("Tried to remove 1 gold from inventory");
+    //         RemoveItemFromInventory("Gold", 1);
+    //     }
+    //     if(Input.GetKeyDown(KeyCode.T)) // remove 1 trash from inventory
+    //     {
+    //         Debug.Log("Tried to remove 1 trash from inventory");
+    //         RemoveItemFromInventory("Trash", 1);
+    //     }
+    //     if(Input.GetKeyDown(KeyCode.L))
+    //     {
+    //         var token = new PlayerSaveData.AccessToken("player1", PlayerSaveData.UserRole.Player);
+    //         bool success = saveData.SetInventory(itemNames, token);
 
-        }
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            var token = new PlayerSaveData.AccessToken("player1", PlayerSaveData.UserRole.Player);
-            Debug.Log(saveData.GetInventory());
+    //     }
+    //     if(Input.GetKeyDown(KeyCode.M))
+    //     {
+    //         var token = new PlayerSaveData.AccessToken("player1", PlayerSaveData.UserRole.Player);
+    //         Debug.Log(saveData.GetInventory());
 
-        }
-    }
+    //     }
+    // }
 
     public void AddItemToInventory(SOItem itemToAdd)
     {
