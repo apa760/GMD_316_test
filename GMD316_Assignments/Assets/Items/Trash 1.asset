@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15493b70e6fba443942ea299e6b7375, type: 3}
   m_Name: Trash 1
   m_EditorClassIdentifier: Assembly-CSharp::SOItem
-  itemName: Trash
+  itemName: Trash 1
   itemDescription: A piece of trash to pick up.
-  itemValue: 1
-  icon: {fileID: 7482667652216324306, guid: 1f8ef4d86a67842499d5c3b04adda77c, type: 3}
-  color: {r: 0.6226415, g: 0.4274601, b: 0.07929868, a: 1}
+  isStackable: 0
+  quantity: 1
+  maxStackSize: 1

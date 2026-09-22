@@ -2,23 +2,23 @@ using UnityEngine;
 using System;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEditor;
 
 public class WorldItemManager : MonoBehaviour
 {
-
-    //public SOItem[] ItemsAll;
+    public List<SOItem> AllItems = new List<SOItem>();
     public SOItem[] spawnedItems;
 
     public GameObject itemObject;
 
-    public string allItemsFilePath;
     public SOItem newItemSO;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {   
-        allItemsFilePath = Path.Combine(Application.dataPath, "SOItem.json");
+
         newItemSO = ScriptableObject.CreateInstance<SOItem>();
     }
 

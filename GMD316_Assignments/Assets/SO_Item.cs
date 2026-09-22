@@ -7,19 +7,8 @@ public class SOItem : ScriptableObject
 
     public string itemName;
     public string itemDescription;
-    public int itemValue;
-    public Sprite icon;
-    public Color color;
+    public bool isStackable;
+    public int quantity;
+    public int maxStackSize;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
