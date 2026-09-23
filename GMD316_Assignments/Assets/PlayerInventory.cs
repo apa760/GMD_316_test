@@ -9,6 +9,35 @@ public class PlayerInventory : MonoBehaviour
     private List<InventorySlot> playerInventory;
 
 
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            try
+            {
+                RemoveItemFromInventory(0, 1);
+            }
+            catch
+            {
+                Debug.LogError("Slot 1 does not have an item in inventory slot.");
+            }
+            
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            try
+            {
+                RemoveItemFromInventory(1, 1);
+            }
+            catch
+            {
+                Debug.LogError("Slot 2 does not have an item in inventory slot.");
+            }
+        }
+    }
+
+
     public List<InventorySlot> GetPlayerInventory()
     {
         return playerInventory;
@@ -50,33 +79,19 @@ public class PlayerInventory : MonoBehaviour
 
     public void RemoveItemFromInventory(int inventoryIndexValue, int _amountToRemove)
     {
-        InventorySlot slot = playerInventoryL[inventoryIndexValue];
+        InventorySlot slot = playerInventory[inventoryIndexValue];
 
-        if(slot && slot != null)
+        if(slot != null)
         {
-            if(slot.stackSize >= _amountToRemove)
+            if(slot.stackSize == _amountToRemove)
             {
-                _amountToRemove -= stackSize;
-
-                if(_amountToRemove > 0)
-                {
-                    for(int slotIndex = 0; slotIndex < playerInventory.Count; slotIndex++)
-                    {
-                        if(slotIndex != inventoryIndexValue)
-                        {
-                            if(playerInventory[slotIndex].item == _item)
-                            {
-
-                            }
-                        }
-                        
-                    }            
-                }
-
-                playerInventoryL.RemoveAt(inventoryIndexValue);    
+                playerInventory.RemoveAt(inventoryIndexValue);    
                 return;
             }
-            else if(slot.stackSize)
+            else
+            {
+                slot.stackSize -= _amountToRemove;
+            }
 
             
         }
@@ -85,6 +100,7 @@ public class PlayerInventory : MonoBehaviour
             Debug.LogError($"{inventoryIndexValue} does not have an item in inventory slot.");
         }
     }
+
 
     // private void PrintPlayerInventory()
     // {
