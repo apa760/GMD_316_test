@@ -1,13 +1,9 @@
 using UnityEngine;
-using System;
-using System.IO;
-using System.Linq;
 using System.Collections.Generic;
-using UnityEditor;
 
 public class WorldItemManager : MonoBehaviour
 {
-    public List<SOItem> AllItems = new List<SOItem>();
+    public ItemDatabaseObject itemsDatabase;
     public SOItem[] spawnedItems;
 
     public GameObject itemObject;
@@ -28,10 +24,8 @@ public class WorldItemManager : MonoBehaviour
 
         if(Input.GetMouseButtonUp(1))//Right Mouse button
         {
-            newItemSO.itemName = "Bush Seed";
+            //newItemSO.itemName = "Bush Seed";
             //pull info from json to create a new item SO
-
-            spawnedItems.Append(newItemSO); // ITS NOT APPENDING
 
 
             // int randNum = Random.Range(0, ItemsAll.Length - 1);
