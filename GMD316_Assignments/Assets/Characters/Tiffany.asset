@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Tiffany
   m_EditorClassIdentifier: Assembly-CSharp::CharacterObject
   characterName: Tiffany
-  health: 3
-  moveSpeed: 23
+  health: 6
+  moveSpeed: 8
   skills:
-  - Listen
-  - Map
+  - Sprint
