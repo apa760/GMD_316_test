@@ -47,9 +47,9 @@ public class PlayerInventory : MonoBehaviour
     }
 
     
-    public void AddItemToInventory(SOItem _item)
+    public void AddItemToInventory(SOItem _item, int _quantity)
     {
-        int iQuantity = _item.quantity;
+        int iQuantity = _quantity;
         
         for(int slotIndex = 0; slotIndex < playerInventory.Count; slotIndex++)
         {
