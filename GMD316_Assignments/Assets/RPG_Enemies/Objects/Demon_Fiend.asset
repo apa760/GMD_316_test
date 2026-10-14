@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Demon_Fiend
   m_EditorClassIdentifier: Assembly-CSharp::EnemyObject
   enemyName: Fiend
-  health: 35
+  health: 28
   attackPower: 22
   moveSpeed: 32
   weakness: 2

@@ -11,7 +11,7 @@ public class ItemToPickUp : MonoBehaviour
         if(col.gameObject.tag == "Player")
         {
             GameObject playerObject = col.gameObject;
-            playerObject.GetComponent<PlayerInventory>().AddItemToInventory(itemSO, stackSize);
+            playerObject.GetComponent<PlayerStatsManager>().AddItemToInventory(itemSO, stackSize);
             Debug.Log(itemSO.itemName + ": " + itemSO.itemDescription);
             Debug.Log("Rarity: " + itemSO.itemRarity.ToString());
             Debug.Log("Weight: " + itemSO.itemWeight.ToString());

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class UIPlayerInventory : MonoBehaviour
 {
 
-    private PlayerInventory playerInventoryScript;
+    private PlayerStatsManager playerStatsManager;
 
     [SerializeField] private GameObject inventorySlots;
     [SerializeField] private GameObject inventoryGFX;
@@ -15,7 +15,7 @@ public class UIPlayerInventory : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerInventoryScript = GameObject.FindWithTag("Player").GetComponent<PlayerInventory>();
+        playerStatsManager = GameObject.FindWithTag("Player").GetComponent<PlayerStatsManager>();
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class UIPlayerInventory : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.I))
         {
-            List<InventorySlot> playerInventory = playerInventoryScript.GetPlayerInventory();
+            List<InventorySlot> playerInventory = playerStatsManager.playerStats.playerInventory;
 
             for(int i = 0; i < playerInventory.Count; i++)
             {

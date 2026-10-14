@@ -140,18 +140,18 @@ public class PlayerInventory : MonoBehaviour
 }
 
 
-[System.Serializable]
-public class InventorySlot
-{
-    public SOItem item;
-    public int stackSize;
-    public int ID;
+// [System.Serializable]
+// public class InventorySlot
+// {
+//     public SOItem item;
+//     public int stackSize;
+//     public int ID;
 
-    public InventorySlot(SOItem _item, int _quantity, int _id)
-    {
-        item = _item;
-        stackSize = _quantity;
-        ID = _id;
-    }
+//     public InventorySlot(SOItem _item, int _quantity, int _id)
+//     {
+//         item = _item;
+//         stackSize = _quantity;
+//         ID = _id;
+//     }
 
-}
+// }

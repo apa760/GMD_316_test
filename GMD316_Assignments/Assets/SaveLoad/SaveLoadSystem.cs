@@ -27,8 +27,15 @@ public class SaveLoadSystem : MonoBehaviour
     public void SaveGame()
     {
         SaveData newSaveData = new SaveData();
+
         newSaveData.savedPosition = player.transform.position;
-        newSaveData.savedInventoryData = player.GetComponent<PlayerInventory>().GetSaveInventory();
+
+        PlayerStatsManager playerStatManager = player.GetComponent<PlayerStatsManager>();
+
+        newSaveData.savedInventoryData = playerStatManager.GetSaveInventory();
+        newSaveData.playerHealth = playerStatManager.playerStats.Health;
+        newSaveData.playerExpPoints = playerStatManager.playerStats.ExpPoints;
+        newSaveData.playerLevel = playerStatManager.playerStats.Level;
 
         jsonData = JsonUtility.ToJson(newSaveData);
         tempSaveData = newSaveData;
@@ -39,12 +46,19 @@ public class SaveLoadSystem : MonoBehaviour
     public void LoadGame()
     {
         SaveData newLoadData = new SaveData();
+
         jsonData = File.ReadAllText(Application.persistentDataPath + "/savefile.json");
         JsonUtility.FromJsonOverwrite(jsonData, newLoadData);
 
         player.transform.position = newLoadData.savedPosition;
 
-        player.GetComponent<PlayerInventory>().LoadInventoryData(newLoadData.savedInventoryData);
+        PlayerStatsManager playerStatManager = player.GetComponent<PlayerStatsManager>();
+
+        playerStatManager.LoadInventoryData(newLoadData.savedInventoryData);
+        playerStatManager.playerStats.Health = newLoadData.playerHealth;
+        playerStatManager.playerStats.ExpPoints = newLoadData.playerExpPoints;
+        playerStatManager.playerStats.Level = newLoadData.playerLevel;
+        
     }
 
 
@@ -56,4 +70,7 @@ public class SaveData
     [SerializeField]
     [DictionaryDisplay(keyLabel = "Item ID", valueLabel = "Inventory Stack Size")]
     public Dictionary<int, int[]> savedInventoryData;
+    public int playerHealth;
+    public int playerExpPoints;
+    public int playerLevel;
 }
