@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class PlayerStatsManager : MonoBehaviour
 {
     public PlayerStatsObject playerStats;
+    public LevelUpUI levelUpUI;
+    public Slider hpBar;
 
     WorldItemManager worldItemManager;
 
@@ -11,6 +14,8 @@ public class PlayerStatsManager : MonoBehaviour
     {
         worldItemManager = GameObject.FindWithTag("GameManager").GetComponent<WorldItemManager>();
         playerStats.LEVELUP.AddListener(OnLevelUp);
+        hpBar.maxValue = 5;
+        hpBar.value = playerStats.Health;
     }
 
     void Update()
@@ -23,9 +28,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.U))
         {
-            Debug.Log($"Player health was = {playerStats.Health}");
-            playerStats.Health = playerStats.Health - 1;
-            Debug.Log($"Player takes 1 damage. Player health = {playerStats.Health}");
+            TakeDamage(1);
         }
 
         if(Input.GetKeyDown(KeyCode.Y))
@@ -39,6 +42,11 @@ public class PlayerStatsManager : MonoBehaviour
             playerStats.Level = 1;
             playerStats.ExpPoints = 0;
             playerStats.Health = 5;
+            playerStats.Mana = 5;
+            playerStats.AttackPower = 5;
+            playerStats.Speed = 5;
+            hpBar.maxValue = 5;
+            hpBar.value = 5;
             playerStats.playerInventory.Clear();
             Debug.Log($"{playerStats} was reset!");
         }
@@ -72,18 +80,33 @@ public class PlayerStatsManager : MonoBehaviour
         }
     }
 
-//EXP Functions------------------------------------------------------------------------------------------
-public void AddEXP(int exp)
-{
-    playerStats.ExpPoints += exp;
-    
-}
+    private void TakeDamage(int damage)
+    {
+        Debug.Log($"Player health was = {playerStats.Health}");
+        playerStats.Health = playerStats.Health - damage;
+        hpBar.value = playerStats.Health;
+        Debug.Log($"Player takes 1 damage. Player health = {playerStats.Health}");
+    }
 
-public void OnLevelUp()
-{
-    playerStats.Level += 1;
-    Debug.Log($"Player Level Up! New Level = {playerStats.Level}");
-}
+//EXP Functions------------------------------------------------------------------------------------------
+    public void AddEXP(int exp)
+    {
+        playerStats.ExpPoints += exp;
+        
+    }
+
+    public void OnLevelUp()
+    {
+        playerStats.Level += 1;
+        playerStats.Health = 5 + playerStats.Level;
+        playerStats.Mana += 1;
+        playerStats.AttackPower += 1;
+        playerStats.Speed += 1;
+        hpBar.maxValue = playerStats.Health;
+        hpBar.value = playerStats.Health;
+        levelUpUI.OnLevelUpUI(playerStats);
+        Debug.Log($"Player Level Up! New Level = {playerStats.Level}");
+    }
 
 // Inventory Functions ----------------------------------------------------------------------------------
 
