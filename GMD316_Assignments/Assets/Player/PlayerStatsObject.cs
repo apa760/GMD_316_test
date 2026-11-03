@@ -7,13 +7,15 @@ public class PlayerStatsObject : ScriptableObject
 {
     public UnityEvent LEVELUP;
 
+    [SerializeField] private int _maxResourceStatValue = 100;
+    [SerializeField] private int _maxSubStatValue = 999;
 
     [SerializeField] private int _health = 5;
     public int Health
     {
         get { return _health; }
         set { 
-            _health = Mathf.Clamp(value, 0, 100);
+            _health = Mathf.Clamp(value, 0, _maxResourceStatValue);
             _health = value;
         }
     }
@@ -22,7 +24,7 @@ public class PlayerStatsObject : ScriptableObject
     {
         get { return _mana; }
         set { 
-            _mana = Mathf.Clamp(value, 0, 100);
+            _mana = Mathf.Clamp(value, 0, _maxResourceStatValue);
             _mana = value;
         }
     }
@@ -31,7 +33,7 @@ public class PlayerStatsObject : ScriptableObject
     {
         get { return _speed; }
         set { 
-            _speed = Mathf.Clamp(value, 0, 999);
+            _speed = Mathf.Clamp(value, 0, _maxSubStatValue);
             _speed = value;
         }
     }
@@ -40,7 +42,7 @@ public class PlayerStatsObject : ScriptableObject
     {
         get { return _attackPower; }
         set {
-            _attackPower = Mathf.Clamp(value, 0, 999); 
+            _attackPower = Mathf.Clamp(value, 0, _maxSubStatValue); 
             _attackPower = value; 
         }
     }
