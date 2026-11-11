@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b747ff0edaa80479548ca0d825e0a0, type: 3}
+  m_Name: Weapon_PeaShooter
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponObject
+  weaponSprite: {fileID: 3625043607559282579, guid: e9f112afb9850b742a4eed1ae517f245, type: 3}
+  weaponName: Pea Shooter
+  weaponDamage: 10
+  weaponFireSpeed: 50
+  weaponMaxAmmo: 3
+  upgrades:
+  - {fileID: 11400000, guid: 991cb87bd1a6e8548834d1a40ebfdc0b, type: 2}
+  currentDamage: 10
+  currentFireSpeed: 50
+  currentAmmo: 3
+  currentMaxAmmo: 3
