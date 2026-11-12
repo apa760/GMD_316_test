@@ -9,6 +9,10 @@ public class PlayerStats : MonoBehaviour
         set { 
             _health = Mathf.Clamp(value, 0, 5);
             _health = value;
+            if (_health <= 0)
+            {
+                isAlive = false;
+            }
         }
     }
     [SerializeField] private int _moveSpeed = 5;
@@ -29,5 +33,7 @@ public class PlayerStats : MonoBehaviour
             _mechParts = value; 
         }
     }
+
+    public bool isAlive = true;
 
 }

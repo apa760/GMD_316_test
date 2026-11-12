@@ -17,9 +17,11 @@ MonoBehaviour:
   weaponDamage: 10
   weaponFireSpeed: 50
   weaponMaxAmmo: 3
-  upgrades:
-  - {fileID: 11400000, guid: 991cb87bd1a6e8548834d1a40ebfdc0b, type: 2}
+  weaponReloadSpeed: 0
+  upgrades: []
   currentDamage: 10
   currentFireSpeed: 50
   currentAmmo: 3
   currentMaxAmmo: 3
+  currentReloadSpeed: 1
+  bulletPrefab: {fileID: 8221669932882851913, guid: 590bfd61f91865640a65662384ce2004, type: 3}

@@ -13,11 +13,17 @@ public class UpgradeObject : ScriptableObject
         FIRE_SPEED,
         FIRE_TYPE,
         AMMO,
+        RELOAD_SPEED
 
         
     }
     public UPGRADE_TYPE upgradeType;
     public float upgradeValue;
+        // DAMAGE - whole number value
+        // FIRE_SPEED - float percentage
+        // FIRE_TYPE - 
+        // AMMO - whole number value
+        // RELOAD_SPEED - float percentage
 
 
 

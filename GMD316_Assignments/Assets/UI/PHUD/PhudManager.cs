@@ -19,7 +19,11 @@ public class PhudManager : MonoBehaviour
     {
         playerStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
         weaponSystem = GameObject.FindWithTag("Player").GetComponent<WeaponSystem>();
-        UpdatePHUD();
+
+        weaponSystem.GUN_FIRED.AddListener(ManageAmmoIcons);
+        weaponSystem.GUN_RELOADED.AddListener(ManageAmmoIcons);
+
+        InitializePHUD();
     }
 
     // Update is called once per frame
@@ -28,7 +32,7 @@ public class PhudManager : MonoBehaviour
         
     }
 
-    private void UpdatePHUD()
+    private void InitializePHUD()
     {
         if(weaponIcon != null)
         {
@@ -45,4 +49,31 @@ public class PhudManager : MonoBehaviour
             Instantiate(ammoIconPrefab, ammoIcons.transform);
         }
     }
+
+
+    private void ManageAmmoIcons()
+    {
+        if(ammoIcons.transform.childCount != weaponSystem.weaponObject.currentAmmo)
+        {
+            if(ammoIcons.transform.childCount > weaponSystem.weaponObject.currentAmmo)
+            {
+                int difference = ammoIcons.transform.childCount - weaponSystem.weaponObject.currentAmmo;
+                for (int i = 0; i < difference; i++)
+                {
+                    Destroy(ammoIcons.transform.GetChild(i).gameObject);
+                }
+            }
+            else
+            {
+                int difference = weaponSystem.weaponObject.currentAmmo - ammoIcons.transform.childCount;
+                for (int i = 0; i < difference; i++)
+                {
+                    Instantiate(ammoIconPrefab, ammoIcons.transform);
+                }
+            }
+        }
+    }
+
+
+
 }

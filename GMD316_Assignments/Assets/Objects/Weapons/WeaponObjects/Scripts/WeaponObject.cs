@@ -7,9 +7,10 @@ public class WeaponObject : ScriptableObject
     public Sprite weaponSprite;
     public string weaponName;
 
-    public int weaponDamage;
-    public float weaponFireSpeed;
-    public int weaponMaxAmmo;
+    [SerializeField] private int weaponDamage;
+    [SerializeField] private float weaponFireSpeed;
+    [SerializeField] private int weaponMaxAmmo;
+    [SerializeField] private float weaponReloadSpeed;
 
     public List<UpgradeObject> upgrades = new List<UpgradeObject>();
 
@@ -18,8 +19,9 @@ public class WeaponObject : ScriptableObject
     public float currentFireSpeed;
     public int currentAmmo;
     public int currentMaxAmmo;
+    public float currentReloadSpeed;
 
-
+    public GameObject bulletPrefab;
 
     public void AddUpgrade(UpgradeObject upgrade)
     {
@@ -45,11 +47,15 @@ public class WeaponObject : ScriptableObject
                         currentDamage = Mathf.RoundToInt(currentDamage + upgradeObject.upgradeValue);
                         break;
                     case UpgradeObject.UPGRADE_TYPE.FIRE_SPEED:
+                        currentFireSpeed = currentFireSpeed - (currentFireSpeed * upgradeObject.upgradeValue);
                         break;
                     case UpgradeObject.UPGRADE_TYPE.FIRE_TYPE:
                         break;
                     case UpgradeObject.UPGRADE_TYPE.AMMO:
                         currentMaxAmmo = Mathf.RoundToInt(currentDamage + upgradeObject.upgradeValue);
+                        break;
+                    case UpgradeObject.UPGRADE_TYPE.RELOAD_SPEED:
+                        currentReloadSpeed = currentReloadSpeed - (currentReloadSpeed * upgradeObject.upgradeValue);
                         break;
                     default:
                         Debug.Log($"SetWeaponStats switch case didnt match: {upgradeObject.upgradeType}");
@@ -62,13 +68,5 @@ public class WeaponObject : ScriptableObject
         Debug.Log($"Current Fire Speed: {currentFireSpeed}");
 
     }
-
-
-    public void Fire()
-    {
-
-    }
-
-
 
 }
