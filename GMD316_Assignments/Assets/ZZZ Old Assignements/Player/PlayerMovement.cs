@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     Vector2 movement;
 
+    public ParticleSystem propParticles;
+
     void Start()
     {
         playerStats = gameObject.GetComponent<PlayerStats>();

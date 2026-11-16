@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b747ff0edaa80479548ca0d825e0a0, type: 3}
+  m_Name: Weapon_MegaCannon
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponObject
+  weaponSprite: {fileID: 3625043607559282579, guid: e9f112afb9850b742a4eed1ae517f245, type: 3}
+  weaponName: Mega Cannon
+  idNumber: 3
+  weaponDamage: 50
+  weaponFireSpeed: 15
+  weaponMaxAmmo: 3
+  weaponReloadSpeed: 0.5
+  upgrades: []
+  currentDamage: 0
+  currentFireSpeed: 0
+  currentAmmo: 0
+  currentMaxAmmo: 0
+  currentReloadSpeed: 0
+  bulletPrefab: {fileID: 0}

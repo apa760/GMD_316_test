@@ -52,7 +52,7 @@ public class WeaponObject : ScriptableObject
                     case UpgradeObject.UPGRADE_TYPE.FIRE_TYPE:
                         break;
                     case UpgradeObject.UPGRADE_TYPE.AMMO:
-                        currentMaxAmmo = Mathf.RoundToInt(currentDamage + upgradeObject.upgradeValue);
+                        currentMaxAmmo = Mathf.RoundToInt(currentMaxAmmo + upgradeObject.upgradeValue);
                         break;
                     case UpgradeObject.UPGRADE_TYPE.RELOAD_SPEED:
                         currentReloadSpeed = currentReloadSpeed - (currentReloadSpeed * upgradeObject.upgradeValue);
